@@ -1,0 +1,33 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyassettablemak-dev-175829-authRole",
+      "UnauthRoleArn": "arn:aws:iam::074682543290:role/amplify-amplifyassettablemak-dev-175829-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::074682543290:role/amplify-amplifyassettablemak-dev-175829-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-amplifyassettablemak-dev-175829-deployment",
+      "UnauthRoleName": "amplify-amplifyassettablemak-dev-175829-unauthRole",
+      "StackName": "amplify-amplifyassettablemak-dev-175829",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:074682543290:stack/amplify-amplifyassettablemak-dev-175829/51fdac30-44d7-11ed-89c3-0e090c44cbd1",
+      "AmplifyAppId": "dmuoeaimfoayo",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-amplifyassettablemak-dev-175829-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "assettablemaker": {}
+      },
+      "function": {
+        "assettablemakerCustomMessage": {
+          "REDIRECTURL": "",
+          "EMAILSUBJECT": "",
+          "EMAILMESSAGE": "",
+          "deploymentBucketName": "amplify-amplifyassettablemak-dev-175829-deployment",
+          "s3Key": "amplify-builds/assettablemakerCustomMessage-6b6e5676397664497248-build.zip"
+        }
+      },
+      "api": {
+        "amplifyassettablemak": {}
+      }
+    }
+  }
+}
