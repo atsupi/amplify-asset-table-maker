@@ -14,16 +14,7 @@
     },
     "categories": {
       "auth": {
-        "assettablemaker": {}
-      },
-      "function": {
-        "assettablemakerCustomMessage": {
-          "REDIRECTURL": "",
-          "EMAILSUBJECT": "",
-          "EMAILMESSAGE": "",
-          "deploymentBucketName": "amplify-amplifyassettablemak-dev-175829-deployment",
-          "s3Key": "amplify-builds/assettablemakerCustomMessage-6b6e5676397664497248-build.zip"
-        }
+        "amplifyassettablemak126a9cb9": {}
       },
       "api": {
         "amplifyassettablemak": {}

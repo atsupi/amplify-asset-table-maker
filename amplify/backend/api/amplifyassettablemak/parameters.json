@@ -2,11 +2,11 @@
   "AppSyncApiName": "amplifyassettablemak",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2022-10-05T18:35:08.474Z",
   "AuthCognitoUserPoolId": {
     "Fn::GetAtt": [
-      "authassettablemaker",
+      "authamplifyassettablemak126a9cb9",
       "Outputs.UserPoolId"
     ]
-  }
+  },
+  "AuthModeLastUpdated": "2022-10-06T14:17:40.172Z"
 }

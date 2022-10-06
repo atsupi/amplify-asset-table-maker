@@ -3,6 +3,7 @@ import './App.css';
 import { API } from 'aws-amplify';  
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'; 
 import { listAssettables } from './graphql/queries';  
+import { getAssettables } from './graphql/queries';  
 import { createAssettable as createAssettableMutation, deleteAssettable as deleteAssettableMutation } from './graphql/mutations';  
 const initialFormState = { id: '', PrimaryKey: '', Data: '', AssetType: '', Facility: '', ReportBy: '', Storage: '' }  
 function App() {  
@@ -27,7 +28,7 @@ function App() {
     await API.graphql({ query: deleteAssettableMutation, variables: { input: { id } }});  
   }
   //const listItems = assettables.map(note => ({note.id}));
-  const listItems=[1,2,3,4,5];
+  const listItems = [1,2,3,4,5]
   return (  
     <div className="App">  
       <h1>My Assettables App</h1>  

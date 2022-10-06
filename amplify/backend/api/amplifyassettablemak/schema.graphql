@@ -10,4 +10,4 @@ type Assettable @model {
   Facility: String
   ReportBy: String
   Storage: String
-}
+} 
