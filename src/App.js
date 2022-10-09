@@ -35,17 +35,18 @@ function App() {
   const listItems = [1,2,3,4,5] // for debug
   const table = API.graphql({ query: listAssettables});
   console.log(table);
+  const locList = []
+  for (let asset of assettables) {
+    if (locList.indexOf(asset.Facility) < 0) {
+      locList.push(asset.Facility)
+    }
+  }
+  console.log(locList);
   return (  
     <div className="App">  
       {showHeader}  
       <div>{listItems}</div> {/* for debug */}
-      <div>
-        <ul>
-          <ShowAssetTable assettables={assettables} location="Konwa+DarkRoom"/>
-          <ShowAssetTable assettables={assettables} location="Konwa"/>
-          <ShowAssetTable assettables={assettables} location="DarkRoom"/>
-        </ul>
-      </div>
+      <ShowAssetTable assettables={assettables} locList={locList}/>
       <AmplifySignOut /> 
     </div>  
   );  
