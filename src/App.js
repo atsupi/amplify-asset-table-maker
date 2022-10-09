@@ -4,6 +4,7 @@ import { API } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'; 
 import { listAssettables } from './graphql/queries';  
 import { createAssettable as createAssettableMutation, deleteAssettable as deleteAssettableMutation } from './graphql/mutations';  
+import ShowAssetTable from './components/ShowAssetTable';  
 const initialFormState = { PrimaryKey: '', Date: '', AssetType: '', Facility: '', ReportBy: '', Storage: '' }  
 
 function App() {  
@@ -27,25 +28,23 @@ function App() {
     setAssettables(newAssettablesArray);  
     await API.graphql({ query: deleteAssettableMutation, variables: { input: { id } }});  
   }
+  const showHeader = (
+      <h1>My Assettables App</h1>
+  )
   //const listItems = assettables.map(note => ({note.id}));
-  const listItems = [1,2,3,4,5]
+  const listItems = [1,2,3,4,5] // for debug
   const table = API.graphql({ query: listAssettables});
   console.log(table);
   return (  
     <div className="App">  
-      <h1>My Assettables App</h1>  
-      <div>{listItems}</div>
-      <div style={{marginBottom: 30}}>  
-        {
-          assettables.map(note => (
-//            <div key={note.id || note.PrimaryKey}>
-            <div>
-              <h2>{note.PrimaryKey}</h2>  
-              <p>{note.Date} {note.ReportBy} {note.Facility} {note.Store} {note.AssetType}</p>
-              <button onClick={() => deleteAssettable(note)}>Delete asset</button>  
-            </div>  
-          ))  
-        }  
+      {showHeader}  
+      <div>{listItems}</div> {/* for debug */}
+      <div>
+        <ul>
+          <ShowAssetTable assettables={assettables} location="Konwa+DarkRoom"/>
+          <ShowAssetTable assettables={assettables} location="Konwa"/>
+          <ShowAssetTable assettables={assettables} location="DarkRoom"/>
+        </ul>
       </div>
       <AmplifySignOut /> 
     </div>  
