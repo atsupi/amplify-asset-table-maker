@@ -32,7 +32,8 @@ function App() {
       <h1>My Assettables App</h1>
   )
   //const listItems = assettables.map(note => ({note.id}));
-  const listItems = [1,2,3,4,5] // for debug
+  //const listItems = [1,2,3,4,5] // for debug
+  const listItems = []
   const table = API.graphql({ query: listAssettables});
   console.log(table);
   const locList = []
