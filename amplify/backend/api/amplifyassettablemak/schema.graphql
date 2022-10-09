@@ -8,7 +8,7 @@ type Assettable
   )
   @auth(rules: [
     {allow: owner, ownerField:"owner", provider: userPools, operations:[read, create, delete]}
-    {allow: private, provider: userPools, operations:[read]}
+    {allow: private, provider: userPools, operations:[read, delete]}
   ])
 {
   id: ID!

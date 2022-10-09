@@ -15,6 +15,7 @@ table th {
 table th, table td {
   border: solid 1px #aaa;
   padding:15px;
+  white-space: nowrap;
 }
 
 .Location {

@@ -12,8 +12,9 @@ function AssetItem (props) {
         <td>{note.Facility}</td>
         <td>{note.Storage}</td>
         <td>{note.AssetType}</td>
+        <td>{note.id}</td>
         <td>
-          <button onClick={() => console.log("ShowAssetTable onClick")}>Delete</button>
+          <button onClick={() => props.deleteitem(note)}>Delete</button>
         </td>
       </tr>
   ))  

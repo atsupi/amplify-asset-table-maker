@@ -26,9 +26,10 @@ function ShowAssetTable(props) {
                 <th>Location</th>
                 <th>Storage</th>
                 <th>Asset type</th>
+                <th>PK</th>
                 <th>Link</th>
               </tr>
-              <AssetItem location={location} assettables={props.assettables}/>
+              <AssetItem location={location} assettables={props.assettables} deleteitem={props.deleteitem}/>
             </tbody>
           </table>
         </div>

@@ -24,7 +24,8 @@ function App() {
     setFormData(initialFormState);  
   }  
   async function deleteAssettable({ id }) {
-    const newAssettablesArray = assettables.filter(note => note.id !== id);  
+    console.log("Deletion request of id %d", id)
+    const newAssettablesArray = assettables.filter(note => note.id !== String(id));  
     setAssettables(newAssettablesArray);  
     await API.graphql({ query: deleteAssettableMutation, variables: { input: { id } }});  
   }
@@ -35,19 +36,19 @@ function App() {
   //const listItems = [1,2,3,4,5] // for debug
   const listItems = []
   const table = API.graphql({ query: listAssettables});
-  console.log(table);
+  //console.log(table); // for debug
   const locList = []
   for (let asset of assettables) {
     if (locList.indexOf(asset.Facility) < 0) {
       locList.push(asset.Facility)
     }
   }
-  console.log(locList);
+  //console.log(locList); // for debug
   return (  
     <div className="App">  
       {showHeader}  
       <div>{listItems}</div> {/* for debug */}
-      <ShowAssetTable assettables={assettables} locList={locList}/>
+      <ShowAssetTable assettables={assettables} locList={locList} deleteitem={deleteAssettable}/>
       <AmplifySignOut /> 
     </div>  
   );  
