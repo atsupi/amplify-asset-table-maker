@@ -11,8 +11,8 @@ export const getAssettable = /* GraphQL */ `
       Facility
       ReportBy
       Storage
-      createdAt
-      updatedAt
+      owner
+      type
     }
   }
 `;
@@ -31,8 +31,8 @@ export const listAssettables = /* GraphQL */ `
         Facility
         ReportBy
         Storage
-        createdAt
-        updatedAt
+        owner
+        type
       }
       nextToken
     }

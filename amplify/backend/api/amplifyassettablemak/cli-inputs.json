@@ -8,6 +8,13 @@
       "cognitoUserPoolId": "authamplifyassettablemak126a9cb9"
     },
     "conflictResolution": {},
-    "additionalAuthTypes": []
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 30,
+        "apiKeyExpirationDate": "2022-11-08T14:14:02.219Z",
+        "keyDescription": "assettable"
+      }
+    ]
   }
 }

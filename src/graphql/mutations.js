@@ -14,8 +14,8 @@ export const createAssettable = /* GraphQL */ `
       Facility
       ReportBy
       Storage
-      createdAt
-      updatedAt
+      owner
+      type
     }
   }
 `;
@@ -32,8 +32,8 @@ export const updateAssettable = /* GraphQL */ `
       Facility
       ReportBy
       Storage
-      createdAt
-      updatedAt
+      owner
+      type
     }
   }
 `;
@@ -50,8 +50,8 @@ export const deleteAssettable = /* GraphQL */ `
       Facility
       ReportBy
       Storage
-      createdAt
-      updatedAt
+      owner
+      type
     }
   }
 `;

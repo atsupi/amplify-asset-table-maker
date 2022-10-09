@@ -3,9 +3,9 @@ import './App.css';
 import { API } from 'aws-amplify';  
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'; 
 import { listAssettables } from './graphql/queries';  
-import { getAssettables } from './graphql/queries';  
 import { createAssettable as createAssettableMutation, deleteAssettable as deleteAssettableMutation } from './graphql/mutations';  
-const initialFormState = { id: '', PrimaryKey: '', Data: '', AssetType: '', Facility: '', ReportBy: '', Storage: '' }  
+const initialFormState = { PrimaryKey: '', Date: '', AssetType: '', Facility: '', ReportBy: '', Storage: '' }  
+
 function App() {  
   const [assettables, setAssettables] = useState([]);  
   const [formData, setFormData] = useState(initialFormState);  
@@ -13,7 +13,7 @@ function App() {
     fetchAssettables();  
   }, []);  
   async function fetchAssettables() {  
-    const apiData = await API.graphql({ query: listAssettables });  
+    const apiData = await API.graphql({ query: listAssettables});  
     setAssettables(apiData.data.listAssettables.items);  
   }  
   async function createAssettable() {  
@@ -29,6 +29,8 @@ function App() {
   }
   //const listItems = assettables.map(note => ({note.id}));
   const listItems = [1,2,3,4,5]
+  const table = API.graphql({ query: listAssettables});
+  console.log(table);
   return (  
     <div className="App">  
       <h1>My Assettables App</h1>  
@@ -36,7 +38,8 @@ function App() {
       <div style={{marginBottom: 30}}>  
         {
           assettables.map(note => (
-            <div key={note.id || note.PrimaryKey}>
+//            <div key={note.id || note.PrimaryKey}>
+            <div>
               <h2>{note.PrimaryKey}</h2>  
               <p>{note.Date} {note.ReportBy} {note.Facility} {note.Store} {note.AssetType}</p>
               <button onClick={() => deleteAssettable(note)}>Delete asset</button>  

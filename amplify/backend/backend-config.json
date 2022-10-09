@@ -20,7 +20,16 @@
               "userPoolId": "authamplifyassettablemak126a9cb9"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "API_KEY",
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 30,
+                "apiKeyExpirationDate": "2022-11-08T14:14:02.219Z",
+                "description": "assettable"
+              }
+            }
+          ]
         }
       }
     }

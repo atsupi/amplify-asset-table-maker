@@ -2,8 +2,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateAssettable = /* GraphQL */ `
-  subscription OnCreateAssettable {
-    onCreateAssettable {
+  subscription OnCreateAssettable($owner: String) {
+    onCreateAssettable(owner: $owner) {
       id
       PrimaryKey
       Date
@@ -11,14 +11,14 @@ export const onCreateAssettable = /* GraphQL */ `
       Facility
       ReportBy
       Storage
-      createdAt
-      updatedAt
+      owner
+      type
     }
   }
 `;
 export const onUpdateAssettable = /* GraphQL */ `
-  subscription OnUpdateAssettable {
-    onUpdateAssettable {
+  subscription OnUpdateAssettable($owner: String) {
+    onUpdateAssettable(owner: $owner) {
       id
       PrimaryKey
       Date
@@ -26,14 +26,14 @@ export const onUpdateAssettable = /* GraphQL */ `
       Facility
       ReportBy
       Storage
-      createdAt
-      updatedAt
+      owner
+      type
     }
   }
 `;
 export const onDeleteAssettable = /* GraphQL */ `
-  subscription OnDeleteAssettable {
-    onDeleteAssettable {
+  subscription OnDeleteAssettable($owner: String) {
+    onDeleteAssettable(owner: $owner) {
       id
       PrimaryKey
       Date
@@ -41,8 +41,8 @@ export const onDeleteAssettable = /* GraphQL */ `
       Facility
       ReportBy
       Storage
-      createdAt
-      updatedAt
+      owner
+      type
     }
   }
 `;
