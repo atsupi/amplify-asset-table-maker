@@ -38,3 +38,67 @@ export const listAssettables = /* GraphQL */ `
     }
   }
 `;
+export const listAssetSortByDate = /* GraphQL */ `
+  query ListAssetSortByDate(
+    $id: ID!
+    $Date: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelAssettableFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAssetSortByDate(
+      id: $id
+      Date: $Date
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        PrimaryKey
+        Date
+        AssetType
+        Facility
+        ReportBy
+        Storage
+        owner
+        type
+      }
+      nextToken
+    }
+  }
+`;
+export const listAssetBySpecificFacility = /* GraphQL */ `
+  query ListAssetBySpecificFacility(
+    $Facility: String!
+    $Date: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelAssettableFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAssetBySpecificFacility(
+      Facility: $Facility
+      Date: $Date
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        PrimaryKey
+        Date
+        AssetType
+        Facility
+        ReportBy
+        Storage
+        owner
+        type
+      }
+      nextToken
+    }
+  }
+`;

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';  
 import './App.css';  
-import { API } from 'aws-amplify';  
+import { API, graphqlOperation } from 'aws-amplify';  
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'; 
-import { listAssettables } from './graphql/queries';  
+import { listAssettables, listAssetSortByDate, listAssetBySpecificFacility } from './graphql/queries';  
 import { createAssettable as createAssettableMutation, deleteAssettable as deleteAssettableMutation } from './graphql/mutations';  
 import ShowAssetTable from './components/ShowAssetTable';  
-const initialFormState = { PrimaryKey: '', Date: '', AssetType: '', Facility: '', ReportBy: '', Storage: '' }  
+const initialFormState = { PrimaryKey: '', Date: '', AssetType: '', Facility: '', ReportBy: '', Storage: '', type: '' }  
 
 function App() {  
   const [assettables, setAssettables] = useState([]);  
@@ -13,9 +13,27 @@ function App() {
   useEffect(() => {  
     fetchAssettables();  
   }, []);  
+//  async function fetchAssettables() {  
+//    const apiData = await API.graphql({ query: listAssettables});  
+//    setAssettables(apiData.data.listAssettables.items);  
+//  }  
+//  async function fetchAssettables() {  
+//    const apiData = await API.graphql(graphqlOperation(listAssetBySpecificFacility, {
+//      Facility: "Konwa+DarkRoom",
+//      sortDirection: 'ASC',
+//      limit: 10,
+//      nextToken: null
+//    }));  
+//    setAssettables(apiData.data.listAssetBySpecificFacility.items);  
+//  }  
   async function fetchAssettables() {  
-    const apiData = await API.graphql({ query: listAssettables});  
-    setAssettables(apiData.data.listAssettables.items);  
+    const apiData = await API.graphql(graphqlOperation(listAssetSortByDate, {
+      type: "asset",
+      sortDirection: 'ASC',
+      limit: 40,
+      nextToken: null
+    }));  
+    setAssettables(apiData.data.listAssetSortByDate.items);  
   }  
   async function createAssettable() {  
     if (!formData.AssetType || !formData.ReportBy || !formData.Storage) return;  
@@ -35,8 +53,6 @@ function App() {
   //const listItems = assettables.map(note => ({note.id}));
   //const listItems = [1,2,3,4,5] // for debug
   const listItems = []
-  const table = API.graphql({ query: listAssettables});
-  //console.log(table); // for debug
   const locList = []
   for (let asset of assettables) {
     if (locList.indexOf(asset.Facility) < 0) {

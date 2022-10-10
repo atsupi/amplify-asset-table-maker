@@ -11,13 +11,14 @@ type Assettable
     {allow: private, provider: userPools, operations:[read, delete]}
   ])
 {
-  id: ID!
-  PrimaryKey: String
-  Date: String
+  id: ID! @index(name: "ByIndex", sortKeyFields: ["Date"], queryField: "listAssetByIndex") 
+  PrimaryKey: String!
+  Date: String!
   AssetType: String
-  Facility: String
+  Facility: String! @index(name: "BySpecificFaclility", sortKeyFields: ["Date", "PrimaryKey"], queryField: "listAssetBySpecificFacility") 
   ReportBy: String
   Storage: String
   owner: String
-  type: String
+  type: String! @index(name: "SortByDate", sortKeyFields: ["Date"], queryField: "listAssetSortByDate") 
 } 
+     
