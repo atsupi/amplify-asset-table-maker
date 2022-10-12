@@ -38,8 +38,8 @@ export const listAssettables = /* GraphQL */ `
     }
   }
 `;
-export const listAssetSortByDate = /* GraphQL */ `
-  query ListAssetSortByDate(
+export const listAssetById = /* GraphQL */ `
+  query ListAssetById(
     $id: ID!
     $Date: ModelStringKeyConditionInput
     $sortDirection: ModelSortDirection
@@ -47,7 +47,7 @@ export const listAssetSortByDate = /* GraphQL */ `
     $limit: Int
     $nextToken: String
   ) {
-    listAssetSortByDate(
+    listAssetById(
       id: $id
       Date: $Date
       sortDirection: $sortDirection
@@ -81,6 +81,38 @@ export const listAssetBySpecificFacility = /* GraphQL */ `
   ) {
     listAssetBySpecificFacility(
       Facility: $Facility
+      Date: $Date
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        PrimaryKey
+        Date
+        AssetType
+        Facility
+        ReportBy
+        Storage
+        owner
+        type
+      }
+      nextToken
+    }
+  }
+`;
+export const listAssetSortByDate = /* GraphQL */ `
+  query ListAssetSortByDate(
+    $type: String!
+    $Date: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelAssettableFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAssetSortByDate(
+      type: $type
       Date: $Date
       sortDirection: $sortDirection
       filter: $filter

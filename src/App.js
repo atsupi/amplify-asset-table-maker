@@ -13,19 +13,21 @@ function App() {
   useEffect(() => {  
     fetchAssettables();  
   }, []);  
-//  async function fetchAssettables() {  
-//    const apiData = await API.graphql({ query: listAssettables});  
-//    setAssettables(apiData.data.listAssettables.items);  
-//  }  
-//  async function fetchAssettables() {  
-//    const apiData = await API.graphql(graphqlOperation(listAssetBySpecificFacility, {
-//      Facility: "Konwa+DarkRoom",
-//      sortDirection: 'ASC',
-//      limit: 10,
-//      nextToken: null
-//    }));  
-//    setAssettables(apiData.data.listAssetBySpecificFacility.items);  
-//  }  
+/*  async function fetchAssettables() {  
+    const apiData = await API.graphql({ query: listAssettables});  
+    setAssettables(apiData.data.listAssettables.items);  
+  }  
+//*/
+/*  async function fetchAssettables() {  
+    const apiData = await API.graphql(graphqlOperation(listAssetBySpecificFacility, {
+      Facility: "DarkRoom",
+      sortDirection: 'ASC',
+      limit: 10,
+      nextToken: null
+    }));  
+    setAssettables(apiData.data.listAssetBySpecificFacility.items);  
+  }  
+//*/
   async function fetchAssettables() {  
     const apiData = await API.graphql(graphqlOperation(listAssetSortByDate, {
       type: "asset",
@@ -35,6 +37,7 @@ function App() {
     }));  
     setAssettables(apiData.data.listAssetSortByDate.items);  
   }  
+//*/
   async function createAssettable() {  
     if (!formData.AssetType || !formData.ReportBy || !formData.Storage) return;  
     await API.graphql({ query: createAssettableMutation, variables: { input: formData } });  

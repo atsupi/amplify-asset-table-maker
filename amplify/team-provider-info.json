@@ -1,4 +1,25 @@
 {
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyassettablemak-test-152247-authRole",
+      "UnauthRoleArn": "arn:aws:iam::074682543290:role/amplify-amplifyassettablemak-test-152247-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::074682543290:role/amplify-amplifyassettablemak-test-152247-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-amplifyassettablemak-test-152247-deployment",
+      "UnauthRoleName": "amplify-amplifyassettablemak-test-152247-unauthRole",
+      "StackName": "amplify-amplifyassettablemak-test-152247",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:074682543290:stack/amplify-amplifyassettablemak-test-152247/90461a90-4978-11ed-b032-0a313e9dbcef",
+      "AmplifyAppId": "dmuoeaimfoayo"
+    },
+    "categories": {
+      "auth": {
+        "amplifyassettablemak126a9cb9": {}
+      },
+      "api": {
+        "amplifyassettablemak": {}
+      }
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-amplifyassettablemak-dev-175829-authRole",
