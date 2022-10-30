@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "amplifyassettablemak126a9cb9_identitypool_126a9cb9",
+    "identityPoolName": "amplifyassettablemake12583ff_identitypool_e12583ff",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "amplif126a9cb9",
-    "userPoolName": "amplifyassettablemak126a9cb9_userpool_126a9cb9",
+    "resourceNameTruncated": "amplife12583ff",
+    "userPoolName": "amplifyassettablemake12583ff_userpool_e12583ff",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,13 +31,15 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "amplif126a9cb9_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "amplife12583ff_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "126a9cb9",
-    "resourceName": "amplifyassettablemak126a9cb9",
+    "sharedId": "e12583ff",
+    "resourceName": "amplifyassettablemake12583ff",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "manual",
-    "userPoolGroupList": [],
+    "useDefault": "default",
+    "userPoolGroupList": [
+      "assetmaker"
+    ],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
     "useEnabledMfas": true,
@@ -54,16 +56,6 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": [],
-    "thirdPartyAuth": false,
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "triggers": {},
-    "hostedUI": false,
-    "authProviders": [],
-    "parentStack": {
-      "Ref": "AWS::StackId"
-    },
-    "permissions": []
+    "dependsOn": []
   }
-}
+} 

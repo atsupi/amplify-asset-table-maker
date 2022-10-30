@@ -5,16 +5,7 @@
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "AMAZON_COGNITO_USER_POOLS",
-      "cognitoUserPoolId": "authamplifyassettablemak126a9cb9"
-    },
-    "conflictResolution": {},
-    "additionalAuthTypes": [
-      {
-        "mode": "API_KEY",
-        "expirationTime": 30,
-        "apiKeyExpirationDate": "2022-11-08T14:14:02.219Z",
-        "keyDescription": "assettable"
-      }
-    ]
+      "cognitoUserPoolId": "authamplifyassettablemake12583ff"
+    }
   }
 }

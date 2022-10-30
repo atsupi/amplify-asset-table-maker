@@ -2,8 +2,11 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateAssettable = /* GraphQL */ `
-  subscription OnCreateAssettable($owner: String) {
-    onCreateAssettable(owner: $owner) {
+  subscription OnCreateAssettable(
+    $filter: ModelSubscriptionAssettableFilterInput
+    $owner: String
+  ) {
+    onCreateAssettable(filter: $filter, owner: $owner) {
       id
       PrimaryKey
       Date
@@ -17,8 +20,11 @@ export const onCreateAssettable = /* GraphQL */ `
   }
 `;
 export const onUpdateAssettable = /* GraphQL */ `
-  subscription OnUpdateAssettable($owner: String) {
-    onUpdateAssettable(owner: $owner) {
+  subscription OnUpdateAssettable(
+    $filter: ModelSubscriptionAssettableFilterInput
+    $owner: String
+  ) {
+    onUpdateAssettable(filter: $filter, owner: $owner) {
       id
       PrimaryKey
       Date
@@ -32,8 +38,11 @@ export const onUpdateAssettable = /* GraphQL */ `
   }
 `;
 export const onDeleteAssettable = /* GraphQL */ `
-  subscription OnDeleteAssettable($owner: String) {
-    onDeleteAssettable(owner: $owner) {
+  subscription OnDeleteAssettable(
+    $filter: ModelSubscriptionAssettableFilterInput
+    $owner: String
+  ) {
+    onDeleteAssettable(filter: $filter, owner: $owner) {
       id
       PrimaryKey
       Date
